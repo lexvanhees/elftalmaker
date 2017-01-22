@@ -38,7 +38,7 @@
             <span class="status"></span>
         </div>
 
-        <div class="ui-widget-content player player-3">
+        <div class="ui-widget-content player player-3" data-player="3">
             <span class="jersey"></span>
 
             <span class="number">9</span>
@@ -47,7 +47,7 @@
         </div>
 
 
-        <div class="ui-widget-content player player-4">
+        <div class="ui-widget-content player player-4" data-player="4">
             <span class="jersey"></span>
 
             <span class="number">9</span>
@@ -56,7 +56,13 @@
         </div>
 
 
-        <div class="ui-widget-content player player-5"></div>
+        <div class="ui-widget-content player player-5" data-player="5">
+            <span class="jersey"></span>
+
+            <span class="number">9</span>
+            <span class="name">Lex van Hees</span>
+            <span class="status"></span>
+        </div>
 
         <div class="ui-widget-content player player-6"></div>
 
@@ -85,8 +91,8 @@
     </ul>
 </div>
 </div>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="contents/js/jquery-1.12.4.js"></script>
+    <script src="contents/js/jquery-ui.js"></script>
 
 <!--<script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
 <link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css'/>-->
@@ -111,9 +117,7 @@
             $('#edit_player_id').val(id);
             $('#edit_player_name').val(name);
             $('#edit_player_number').val(number);
-
         });
-
 
         // Close dialog and save player
         $("#edit_player").submit(function(e){
@@ -129,6 +133,14 @@
 
             e.preventDefault();
         });
+
+        // Close dialogs
+        $(".close_btn").click(function(){
+            $(".dialog").fadeOut();
+        });
+
+
+
 
         $("#colorpicker").spectrum({
             color: "#f00",
@@ -148,6 +160,7 @@
 <div class="dialog edit_player">
     <form action="" method="post" id="edit_player">
         <div class="container">
+            <span class="close_btn"></span>
             <h3>Edit speler</h3>
 
             <input type="hidden" name="playerid" id="edit_player_id">
