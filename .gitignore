@@ -1,0 +1,12 @@
+# Application
+afbeeldingen/*
+contents/files/*
+contents/css/images/*
+contents/images/*
+
+
+#PHPStorm
+.idea/
+
+# Node Package Manager
+node_modules

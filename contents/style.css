@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42;
+  text-align: left;
+  color: #54565B;
+  overflow-x: hidden; }
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative; }
+
+#field {
+  position: relative;
+  height: 420px;
+  width: 100%;
+  background: url(http://www.conceptdraw.com/How-To-Guide/picture/soccer-football-field-templates/End-Zone-View-Soccer-Football-Field.png) center center no-repeat;
+  background-size: contain;
+  margin: 0 auto; }
+  @media (max-width: 480px) {
+    #field {
+      width: 480px;
+      height: 390px; } }
+  @media (max-width: 320px) {
+    #field {
+      width: 320px;
+      height: 248px; } }
+
+.formation {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+.player {
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  background: orange;
+  cursor: all-scroll; }
+  @media (max-width: 480px) {
+    .player {
+      transform: scale(0.6); } }
+  @media (max-width: 320px) {
+    .player {
+      transform: scale(0.8); } }
+
+.player .jersey {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 60px;
+  background: url(http://www.clker.com/cliparts/c/2/5/7/11971220161720633624ryanlerch_white_t-shirt.svg);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.player .number {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 20px; }
+
+.player .name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px; }
+
+.formation-442 .player-1 {
+  bottom: 5%;
+  left: 46%; }
+
+.formation-442 .player-2 {
+  bottom: 24%;
+  left: 15%; }
+
+.formation-442 .player-3 {
+  bottom: 20%;
+  left: 35%; }
+
+.formation-442 .player-4 {
+  bottom: 20%;
+  left: 55%; }
+
+.formation-442 .player-5 {
+  bottom: 24%;
+  left: 75%; }
+
+.formation-442 .player-6 {
+  bottom: 48%;
+  left: 20%; }
+
+.formation-442 .player-7 {
+  bottom: 35%;
+  left: 45%; }
+
+.formation-442 .player-8 {
+  bottom: 60%;
+  left: 47%; }
+
+.formation-442 .player-9 {
+  bottom: 48%;
+  left: 77%; }
+
+.formation-442 .player-10 {
+  bottom: 80%;
+  left: 25%; }
+
+.formation-442 .player-11 {
+  bottom: 80%;
+  left: 70%; }
+
+.menu {
+  position: relative;
+  height: 50px;
+  background: red; }
+
+.menu ul {
+  list-style: none; }
+
+.menu ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+  background: green; }
+
+/*# sourceMappingURL=style.css.map */

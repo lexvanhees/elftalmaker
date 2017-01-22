@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elftalmaker</title>
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <link rel="stylesheet" href="contents/css/style.min.css">
+</head>
+<body>
+
+<div class="container">
+
+<input type='text' id="colorpicker"/>
+
+<div id="field">
+    <div class="formation formation-442">
+        <div class="ui-widget-content player player-1" data-team="1">
+            <span class="jersey"></span>
+
+            <span class="number">9</span>
+            <span class="name">Lex van Hees</span>
+            <span class="status"></span>
+        </div>
+
+
+        <div class="ui-widget-content player player-2"></div>
+
+        <div class="ui-widget-content player player-3"></div>
+
+
+        <div class="ui-widget-content player player-4"></div>
+
+        <div class="ui-widget-content player player-5"></div>
+
+        <div class="ui-widget-content player player-6"></div>
+
+        <div class="ui-widget-content player player-7">
+        </div>
+
+        <div class="ui-widget-content player player-8">
+        </div>
+
+        <div class="ui-widget-content player player-9">
+        </div>
+
+        <div class="ui-widget-content player player-10">
+        </div>
+
+        <div class="ui-widget-content player player-11">
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</div>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+<!--<script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
+<link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css'/>-->
+
+<script>
+    $(function () {
+        $(".player").draggable({containment: "parent"});
+    });
+
+    $(document).ready(function () {
+
+        $("#colorpicker").spectrum({
+            color: "#f00",
+            preferredFormat: "hex",
+        });
+
+// Change jersey
+        $("#colorpicker").change(function () {
+            var color = $(this).val();
+            $('.player').css('background-color', '' + color + '');
+        });
+
+
+// Change edit
+        $(".player").click(function () {
+            $(".player").find(".text").hide();
+            $(this).find(".text").show();
+        });
+
+
+    });
+</script>
+
+</body>
+</html>
