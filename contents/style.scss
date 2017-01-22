@@ -28,6 +28,20 @@ body {
   position: relative;
 }
 
+// Colorpicker
+#colorpicker {
+  display: none;
+}
+
+.button {
+  display: block;
+  background: $primary-color;
+  color: #fff;
+  border:0;
+  padding:10px;
+  cursor: pointer;
+}
+
 @import './sass/_components';
 @import './sass/_home';
 @import './sass/_dialogs';

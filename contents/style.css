@@ -22,6 +22,17 @@ body {
   max-width: 900px;
   position: relative; }
 
+#colorpicker {
+  display: none; }
+
+.button {
+  display: block;
+  background: #35a6f6;
+  color: #fff;
+  border: 0;
+  padding: 10px;
+  cursor: pointer; }
+
 .game_title {
   position: relative;
   height: 80px;
@@ -106,7 +117,8 @@ body {
     background: orange;
     position: absolute;
     left: 60%;
-    bottom: 20px; }
+    bottom: 20px;
+    display: none; }
     @media (max-width: 320px) {
       .player .status {
         left: 53%;
@@ -160,15 +172,38 @@ body {
   position: relative;
   height: 50px;
   background: red; }
+  .menu ul {
+    list-style: none; }
+    .menu ul li {
+      display: inline-block;
+      vertical-align: top;
+      width: 40px;
+      height: 40px;
+      background: green; }
 
-.menu ul {
-  list-style: none; }
-
-.menu ul li {
-  display: inline-block;
-  vertical-align: top;
-  width: 40px;
-  height: 40px;
-  background: green; }
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ccc;
+  display: none;
+  padding: 10px; }
+  .dialog .container {
+    text-align: center; }
+    .dialog .container h3 {
+      margin-bottom: 15px; }
+    .dialog .container label {
+      font-weight: bold;
+      text-align: left; }
+    .dialog .container input[type="text"], .dialog .container input[type="number"] {
+      position: relative;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ddd;
+      margin-bottom: 10px; }
+    .dialog .container .button {
+      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

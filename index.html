@@ -21,16 +21,16 @@
 <div id="field">
 
     <div class="formation formation-442">
-        <div class="ui-widget-content player player-1" data-team="1">
+        <div class="ui-widget-content player player-1" data-player="1">
             <span class="jersey"></span>
 
             <span class="number">9</span>
-            <span class="name">Lex van Hees</span>
+            <span class="name">d van Hees</span>
             <span class="status"></span>
         </div>
 
 
-        <div class="ui-widget-content player player-2">
+        <div class="ui-widget-content player player-2" data-player="2">
             <span class="jersey"></span>
 
             <span class="number">9</span>
@@ -85,8 +85,8 @@
     </ul>
 </div>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!--<script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
 <link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css'/>-->
@@ -97,6 +97,38 @@
     });
 
     $(document).ready(function () {
+
+        // Open dialog for editing player
+        $(".player").click(function () {
+            var id = $(this).data('player');
+            var name = $('[data-player=' + id + ']').find('.name').text();
+            var number = $('[data-player=' + id + ']').find('.number').text();
+
+            // Clear fields
+            $('#edit_player_name, #edit_player_number').val('');
+            $(".edit_player").fadeIn();
+
+            $('#edit_player_id').val(id);
+            $('#edit_player_name').val(name);
+            $('#edit_player_number').val(number);
+
+        });
+
+
+        // Close dialog and save player
+        $("#edit_player").submit(function(e){
+
+            var id = $('#edit_player_id').val();
+            var name = $('#edit_player_name').val();
+            var number = $('#edit_player_number').val();
+
+            $('[data-player=' + id + ']').find('.name').html(name);
+            $('[data-player=' + id + ']').find('.number').html(number);
+
+            $(".edit_player").fadeOut();
+
+            e.preventDefault();
+        });
 
         $("#colorpicker").spectrum({
             color: "#f00",
@@ -110,15 +142,27 @@
         });
 
 
-// Change edit
-        $(".player").click(function () {
-            $(".player").find(".text").hide();
-            $(this).find(".text").show();
-        });
-
-
     });
 </script>
+
+<div class="dialog edit_player">
+    <form action="" method="post" id="edit_player">
+        <div class="container">
+            <h3>Edit speler</h3>
+
+            <input type="hidden" name="playerid" id="edit_player_id">
+
+            <label for="edit_player_name">Naam</label>
+            <input type="text" name="name" id="edit_player_name" autocomplete="off">
+
+            <label for="edit_player_number">Rugnummer</label>
+            <input type="number" name="number"  id="edit_player_number" autocomplete="off" max="99" min="1">
+
+            <input type="submit" name="save" class="button">
+
+        </div>
+    </form>
+</div>
 
 </body>
 </html>
