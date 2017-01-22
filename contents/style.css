@@ -35,8 +35,8 @@ body {
 
 .game_title {
   position: relative;
-  height: 80px;
-  background: red; }
+  background: red;
+  padding: 15px 0; }
   .game_title .teamname {
     text-align: center;
     display: block; }
@@ -45,16 +45,18 @@ body {
   position: relative;
   height: 420px;
   width: 100%;
+  max-width: 550px;
   background: url(http://www.conceptdraw.com/How-To-Guide/picture/soccer-football-field-templates/End-Zone-View-Soccer-Football-Field.png) center center no-repeat;
   background-size: contain;
   margin: 0 auto; }
   @media (max-width: 480px) {
     #field {
-      width: 480px;
       height: 390px; } }
+  @media (max-width: 300px) {
+    #field {
+      height: 300px; } }
   @media (max-width: 320px) {
     #field {
-      width: 320px;
       height: 248px; } }
 
 .formation {
@@ -192,6 +194,13 @@ body {
   padding: 10px; }
   .dialog .container {
     text-align: center; }
+    .dialog .container .close_btn {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      height: 30px;
+      width: 30px;
+      background: green; }
     .dialog .container h3 {
       margin-bottom: 15px; }
     .dialog .container label {
