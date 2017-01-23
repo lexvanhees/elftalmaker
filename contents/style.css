@@ -74,6 +74,10 @@ body {
     .player {
       width: 62px;
       height: 50px; } }
+  @media (max-width: 768px) {
+    .player {
+      width: 82px;
+      height: 60px; } }
   .player .jersey {
     display: block;
     margin: 0 auto;
@@ -87,16 +91,26 @@ body {
       .player .jersey {
         width: 40px;
         height: 30px; } }
+    @media (max-width: 768px) {
+      .player .jersey {
+        width: 50px;
+        height: 40px; } }
   .player .number {
     position: absolute;
-    top: 5px;
-    left: 0;
-    right: 0;
+    top: 13px;
+    left: -6px;
     text-align: center;
-    font-size: 20px; }
+    font-size: 20px;
+    right: 0; }
     @media (max-width: 320px) {
       .player .number {
         font-size: 11px;
+        padding-right: 5px; } }
+    @media (max-width: 768px) {
+      .player .number {
+        font-size: 14px;
+        left: 4px;
+        top: 10px;
         padding-right: 5px; } }
   .player .name {
     position: absolute;
@@ -127,8 +141,10 @@ body {
         bottom: 12px; } }
 
 .formation-442 .player-1 {
-  bottom: 5%;
-  left: 46%; }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto; }
 
 .formation-442 .player-2 {
   bottom: 24%;
@@ -148,19 +164,19 @@ body {
 
 .formation-442 .player-6 {
   bottom: 48%;
-  left: 20%; }
+  left: 16%; }
 
 .formation-442 .player-7 {
   bottom: 35%;
-  left: 45%; }
+  left: 43%; }
 
 .formation-442 .player-8 {
   bottom: 60%;
-  left: 47%; }
+  left: 43%; }
 
 .formation-442 .player-9 {
   bottom: 48%;
-  left: 77%; }
+  left: 68%; }
 
 .formation-442 .player-10 {
   bottom: 80%;

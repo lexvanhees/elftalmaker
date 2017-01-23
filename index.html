@@ -20,7 +20,7 @@
 
 <div id="field">
 
-    <div class="formation formation-442">
+    <div id="formation" class="formation formation-442">
         <div class="ui-widget-content player player-1" data-player="1">
             <span class="jersey"></span>
 
@@ -55,7 +55,6 @@
             <span class="status"></span>
         </div>
 
-
         <div class="ui-widget-content player player-5" data-player="5">
             <span class="jersey"></span>
 
@@ -64,9 +63,20 @@
             <span class="status"></span>
         </div>
 
-        <div class="ui-widget-content player player-6"></div>
+        <div class="ui-widget-content player player-6" data-player="6">
+            <span class="jersey"></span>
 
-        <div class="ui-widget-content player player-7">
+            <span class="number">9</span>
+            <span class="name"></span>
+            <span class="status"></span>
+        </div>
+
+        <div class="ui-widget-content player player-7" data-player="7">
+            <span class="jersey"></span>
+
+            <span class="number">9</span>
+            <span class="name">Lex van Hees</span>
+            <span class="status"></span>
         </div>
 
         <div class="ui-widget-content player player-8">
@@ -84,7 +94,7 @@
 </div>
 <div class="menu">
     <ul>
-        <li></li>
+        <li class="team_settings"></li>
         <li></li>
         <li></li>
         <li></li>
@@ -93,69 +103,11 @@
 </div>
 <script src="contents/js/jquery-1.12.4.js"></script>
     <script src="contents/js/jquery-ui.js"></script>
+<script src="contents/js/main.js"></script>
 
 <!--<script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
 <link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css'/>-->
 
-<script>
-    $(function () {
-        $(".player").draggable({containment: "parent"});
-    });
-
-    $(document).ready(function () {
-
-        // Open dialog for editing player
-        $(".player").click(function () {
-            var id = $(this).data('player');
-            var name = $('[data-player=' + id + ']').find('.name').text();
-            var number = $('[data-player=' + id + ']').find('.number').text();
-
-            // Clear fields
-            $('#edit_player_name, #edit_player_number').val('');
-            $(".edit_player").fadeIn();
-
-            $('#edit_player_id').val(id);
-            $('#edit_player_name').val(name);
-            $('#edit_player_number').val(number);
-        });
-
-        // Close dialog and save player
-        $("#edit_player").submit(function(e){
-
-            var id = $('#edit_player_id').val();
-            var name = $('#edit_player_name').val();
-            var number = $('#edit_player_number').val();
-
-            $('[data-player=' + id + ']').find('.name').html(name);
-            $('[data-player=' + id + ']').find('.number').html(number);
-
-            $(".edit_player").fadeOut();
-
-            e.preventDefault();
-        });
-
-        // Close dialogs
-        $(".close_btn").click(function(){
-            $(".dialog").fadeOut();
-        });
-
-
-
-
-        $("#colorpicker").spectrum({
-            color: "#f00",
-            preferredFormat: "hex",
-        });
-
-// Change jersey
-        $("#colorpicker").change(function () {
-            var color = $(this).val();
-            $('.player').css('background-color', '' + color + '');
-        });
-
-
-    });
-</script>
 
 <div class="dialog edit_player">
     <form action="" method="post" id="edit_player">
@@ -170,6 +122,31 @@
 
             <label for="edit_player_number">Rugnummer</label>
             <input type="number" name="number"  id="edit_player_number" autocomplete="off" max="99" min="1">
+
+            <input type="submit" name="save" class="button">
+
+        </div>
+    </form>
+</div>
+
+<div class="dialog edit_team">
+    <form action="" method="post" id="edit_team">
+        <div class="container">
+            <span class="close_btn"></span>
+            <h3>Edit team</h3>
+
+
+            <label for="edit_team_name">Teamnaam</label>
+            <input type="text" name="edit_team_name" id="edit_team_name" autocomplete="off">
+
+            <label for="edit_lineup">Opstelling</label>
+            <select class="edit_lineup" id="edit_lineup">
+                <option value="433">4-3-3</option>
+                <option value="442">4-4-2</option>
+                <option value="4141">4-1-4-1</option>
+                <option value="443">443</option>
+                <option value="443">443</option>
+            </select>
 
             <input type="submit" name="save" class="button">
 
