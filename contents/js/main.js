@@ -1,5 +1,14 @@
 $(function () {
-	$(".player").draggable({containment: "parent"});
+	$(".player").draggable({
+		containment: "parent",
+		start: function(event, ui) {
+			ui.helper.bind("click.prevent",
+				function(event) { event.preventDefault(); });
+		},
+		stop: function(event, ui) {
+			setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
+		}
+	});
 });
 
 $(document).ready(function () {
