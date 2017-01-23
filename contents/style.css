@@ -35,29 +35,33 @@ body {
 
 .game_title {
   position: relative;
-  background: red;
+  background: #002953;
   padding: 15px 0; }
   .game_title .teamname {
     text-align: center;
-    display: block; }
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff; }
 
 #field {
   position: relative;
   height: 420px;
   width: 100%;
+  min-width: 320px;
   max-width: 550px;
-  background: url(../img/field.png) center center no-repeat;
+  background: #002953 url(../img/field.png) center center no-repeat;
   background-size: contain;
   margin: 0 auto; }
   @media (max-width: 480px) {
     #field {
       height: 390px; } }
-  @media (max-width: 300px) {
+  @media (max-width: 350px) {
     #field {
-      height: 300px; } }
+      height: 350px; } }
   @media (max-width: 320px) {
     #field {
-      height: 248px; } }
+      height: 304px; } }
 
 .formation {
   position: absolute;
@@ -68,16 +72,15 @@ body {
   position: absolute;
   width: 100px;
   height: 80px;
-  border: 1px solid #ccc;
   cursor: all-scroll; }
+  @media (max-width: 768px) {
+    .player {
+      width: 100px;
+      height: 60px; } }
   @media (max-width: 320px) {
     .player {
       width: 62px;
       height: 50px; } }
-  @media (max-width: 768px) {
-    .player {
-      width: 82px;
-      height: 60px; } }
   .player .jersey {
     display: block;
     margin: 0 auto;
@@ -148,19 +151,19 @@ body {
 
 .formation-442 .player-2 {
   bottom: 24%;
-  left: 15%; }
+  left: 5%; }
 
 .formation-442 .player-3 {
   bottom: 20%;
-  left: 35%; }
+  left: 25%; }
 
 .formation-442 .player-4 {
   bottom: 20%;
-  left: 55%; }
+  left: 45%; }
 
 .formation-442 .player-5 {
   bottom: 24%;
-  left: 75%; }
+  left: 70%; }
 
 .formation-442 .player-6 {
   bottom: 48%;
@@ -189,7 +192,7 @@ body {
 .menu {
   position: relative;
   height: 50px;
-  background: red; }
+  background: #fff; }
   .menu ul {
     list-style: none; }
     .menu ul li {
@@ -197,7 +200,7 @@ body {
       vertical-align: top;
       width: 40px;
       height: 40px;
-      background: green; }
+      border: 1px solid #ccc; }
 
 .dialog {
   position: absolute;

@@ -1,12 +1,15 @@
 
 .game_title {
   position: relative;
-  background: red;
+  background: #002953;
   padding:15px 0;
 
   .teamname {
     text-align: center;
     display: block;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
   }
 }
 
@@ -14,8 +17,9 @@
   position: relative;
   height: 420px;
   width: 100%;
+  min-width: 320px;
   max-width: 550px;
-  background: url(../img/field.png) center center no-repeat;
+  background: #002953 url(../img/field.png) center center no-repeat;
   background-size: contain;
   margin: 0 auto;
 
@@ -23,12 +27,12 @@
     height: 390px;
   }
 
-  @media(max-width: 300px) {
-    height: 300px;
+  @media(max-width: 350px) {
+    height: 350px;
   }
 
   @include media-phone {
-    height: 248px;
+    height: 304px;
   }
 
 }
@@ -43,17 +47,16 @@
   position: absolute;
   width: 100px;
   height: 80px;
-  border: 1px solid #ccc;
   cursor: all-scroll;
+
+  @include media-tablet {
+    width: 100px;
+    height: 60px;
+  }
 
   @include media-phone {
     width: 62px;
     height: 50px;
-  }
-
-  @include media-tablet {
-    width: 82px;
-    height: 60px;
   }
 
   .jersey {
@@ -143,22 +146,22 @@
 
   .player-2 {
     bottom: 24%;
-    left: 15%;
+    left: 5%;
   }
 
   .player-3 {
     bottom: 20%;
-    left: 35%;
+    left: 25%;
   }
 
   .player-4 {
     bottom: 20%;
-    left: 55%;
+    left: 45%;
   }
 
   .player-5 {
     bottom: 24%;
-    left: 75%;
+    left: 70%;
   }
 
   .player-6 {
@@ -195,7 +198,7 @@
   .menu {
     position: relative;
     height: 50px;
-    background: red;
+    background: #fff;
 
     ul {
       list-style: none;
@@ -205,7 +208,7 @@
         vertical-align: top;
         width: 40px;
         height: 40px;
-        background: green;
+        border: 1px solid #ccc;
       }
     }
   }
