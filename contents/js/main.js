@@ -5,7 +5,7 @@ $(function () {
 $(document).ready(function () {
 
 	// Open dialog for editing player
-	$(".player").click(function () {
+	$(".player").on('click touchstart', function() {
 		var id = $(this).data('player');
 		var name = $('[data-player=' + id + ']').find('.name').text();
 		var number = $('[data-player=' + id + ']').find('.number').text();
