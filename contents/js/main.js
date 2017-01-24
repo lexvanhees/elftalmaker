@@ -2,9 +2,8 @@ $(function () {
 	$(".player").draggable({
 		containment: "parent",
 
-		stop: function()
-		{
-			$( ".player" ).off( "click", "**" );
+		start: function(event, ui) {
+			$(this).addClass('noclick');
 		}
 	});
 });
@@ -13,6 +12,11 @@ $(document).ready(function () {
 
 	// Open dialog for editing player
 	$(".player").on('click touchstart', function() {
+
+		if ($(this).hasClass('noclick')) {
+			$(this).removeClass('noclick');
+		}
+
 		var id = $(this).data('player');
 		var name = $('[data-player=' + id + ']').find('.name').text();
 		var number = $('[data-player=' + id + ']').find('.number').text();
