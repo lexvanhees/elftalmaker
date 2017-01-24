@@ -69,6 +69,10 @@
     background-size: contain;
     background-repeat: no-repeat;
 
+    svg path {
+      fill: #000;
+    }
+
     @include media-phone {
       width: 40px;
       height: 30px;
@@ -108,6 +112,7 @@
     right: 0;
     text-align: center;
     font-size: 14px;
+    color: #fff;
 
     @include media-phablet {
       font-size: 12px;
@@ -138,10 +143,8 @@
 
 .formation-442 {
   .player-1 {
-    left: 0;
-    right: 0;
+    left: 39%;
     bottom:0;
-    margin: 0 auto;
   }
 
   .player-2 {
@@ -228,8 +231,8 @@
 
       .close_btn {
         position: absolute;
-        right: 15px;
-        top: 15px;
+        right: 0;
+        top: 0;
         height:30px;
         width: 30px;
         background: green;

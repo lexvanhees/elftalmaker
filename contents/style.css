@@ -90,6 +90,8 @@ body {
     background: url(../img/jersey.svg);
     background-size: contain;
     background-repeat: no-repeat; }
+    .player .jersey svg path {
+      fill: #000; }
     @media (max-width: 320px) {
       .player .jersey {
         width: 40px;
@@ -121,7 +123,8 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 14px; }
+    font-size: 14px;
+    color: #fff; }
     @media (max-width: 480px) {
       .player .name {
         font-size: 12px; } }
@@ -144,10 +147,8 @@ body {
         bottom: 12px; } }
 
 .formation-442 .player-1 {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto; }
+  left: 39%;
+  bottom: 0; }
 
 .formation-442 .player-2 {
   bottom: 24%;
@@ -215,8 +216,8 @@ body {
     text-align: center; }
     .dialog .container .close_btn {
       position: absolute;
-      right: 15px;
-      top: 15px;
+      right: 0;
+      top: 0;
       height: 30px;
       width: 30px;
       background: green; }
