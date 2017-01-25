@@ -27,7 +27,7 @@ body {
 
 .button {
   display: block;
-  background: #35a6f6;
+  background: #2faa60;
   color: #fff;
   border: 0;
   padding: 10px;
@@ -322,18 +322,22 @@ body {
   bottom: 70%;
   left: 38%; }
 
-.menu {
-  position: relative;
-  height: 50px;
-  background: #fff; }
-  .menu ul {
+.header {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3; }
+  .header ul {
     list-style: none; }
-    .menu ul li {
+    .header ul li {
       display: inline-block;
       vertical-align: top;
       width: 40px;
       height: 40px;
-      border: 1px solid #ccc; }
+      cursor: pointer; }
+      .header ul li:first-child {
+        background: url(../img/settings.svg) center center no-repeat;
+        background-size: 75%; }
 
 .dialog {
   position: absolute;
@@ -341,7 +345,8 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #ccc;
+  z-index: 10;
+  background: #eaeaea;
   display: none;
   padding: 10px; }
   .dialog .container {
@@ -352,7 +357,9 @@ body {
       top: 0;
       height: 30px;
       width: 30px;
-      background: green; }
+      background: url(../img/close.svg) center center no-repeat;
+      background-size: cover;
+      cursor: pointer; }
     .dialog .container h3 {
       margin-bottom: 15px; }
     .dialog .container label {
@@ -364,6 +371,8 @@ body {
       width: 100%;
       border: 1px solid #ddd;
       margin-bottom: 10px; }
+    .dialog .container input[type="submit"] {
+      margin-top: 20px; }
     .dialog .container .button {
       width: 100%; }
 

@@ -11,7 +11,11 @@
 
 <div class="container">
 
-    <input type='text' id="colorpicker"/>
+    <header class="header">
+        <ul>
+            <li class="team_settings"></li>
+        </ul>
+    </header>
 
     <div class="game_title">
         <span class="teamname">AMVJ</span>
@@ -25,7 +29,7 @@
                 <span class="jersey"></span>
 
                 <span class="number">9</span>
-                <span class="name">d van Hees</span>
+                <span class="name">D van Hees</span>
                 <span class="status"></span>
             </div>
 
@@ -112,14 +116,9 @@
             </div>
         </div>
     </div>
-    <div class="menu">
-        <ul>
-            <li class="team_settings"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+
+    <button class="make" id="make">Save</button>
+
 </div>
 
 
@@ -128,7 +127,7 @@
         <div class="container">
             <span class="close_btn"></span>
 
-            <h3>Edit speler</h3>
+            <h3>Speler</h3>
 
             <input type="hidden" name="playerid" id="edit_player_id">
 
@@ -149,7 +148,7 @@
         <div class="container">
             <span class="close_btn"></span>
 
-            <h3>Edit team</h3>
+            <h3>Instellingen</h3>
 
             <label for="edit_team_name">Teamnaam</label>
             <input type="text" name="edit_team_name" id="edit_team_name" autocomplete="off">
@@ -173,7 +172,7 @@
 <script src="contents/js/jquery-ui.js"></script>
 <script src="contents/js/jquery.ui.touch-punch.min.js"></script>
 <script src="contents/js/main.js"></script>
-
+<script src="contents/js/html2canvas.js"></script>
 <!--<script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
 <link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css'/>-->
 </body>
