@@ -8,6 +8,26 @@ $(function () {
 	});
 });
 
+$(function() { 
+    $(".make").click(function() { 
+        html2canvas($("#field"), {
+        	
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                // Convert and download as image 
+                Canvas2Image.saveAsPNG(canvas);
+                $("#img-out").append(canvas);
+
+                // Clean up 
+                //document.body.removeChild(canvas);
+            }
+        });
+    });
+}); 
+
+
 $(document).ready(function () {
 
 	// Open dialog for editing player
