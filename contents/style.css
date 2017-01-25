@@ -35,7 +35,7 @@ body {
 
 .game_title {
   position: relative;
-  background: #002953;
+  background: #001f34;
   padding: 15px 0; }
   .game_title .teamname {
     text-align: center;
@@ -50,7 +50,7 @@ body {
   width: 100%;
   min-width: 320px;
   max-width: 550px;
-  background: #002953 url(../img/field.png) center center no-repeat;
+  background: #001f34 url(../img/field.png) center center no-repeat;
   background-size: contain;
   margin: 0 auto; }
   @media (max-width: 480px) {
@@ -167,28 +167,160 @@ body {
   left: 70%; }
 
 .formation-442 .player-6 {
-  bottom: 48%;
+  bottom: 46%;
   left: 16%; }
 
 .formation-442 .player-7 {
   bottom: 35%;
-  left: 43%; }
+  left: 38%; }
 
 .formation-442 .player-8 {
-  bottom: 60%;
-  left: 43%; }
+  bottom: 58%;
+  left: 38%; }
 
 .formation-442 .player-9 {
-  bottom: 48%;
-  left: 68%; }
+  bottom: 46%;
+  left: 65%; }
 
 .formation-442 .player-10 {
-  bottom: 80%;
-  left: 25%; }
+  bottom: 70%;
+  left: 16%; }
 
 .formation-442 .player-11 {
-  bottom: 80%;
+  bottom: 70%;
+  left: 60%; }
+
+.formation-433 .player-1 {
+  left: 39%;
+  bottom: 0; }
+
+.formation-433 .player-2 {
+  bottom: 24%;
+  left: 5%; }
+
+.formation-433 .player-3 {
+  bottom: 20%;
+  left: 25%; }
+
+.formation-433 .player-4 {
+  bottom: 20%;
+  left: 45%; }
+
+.formation-433 .player-5 {
+  bottom: 24%;
   left: 70%; }
+
+.formation-433 .player-6 {
+  bottom: 46%;
+  left: 16%; }
+
+.formation-433 .player-7 {
+  bottom: 46%;
+  left: 40%; }
+
+.formation-433 .player-8 {
+  bottom: 70%;
+  left: 40%; }
+
+.formation-433 .player-9 {
+  bottom: 46%;
+  left: 65%; }
+
+.formation-433 .player-10 {
+  bottom: 70%;
+  left: 16%; }
+
+.formation-433 .player-11 {
+  bottom: 70%;
+  left: 60%; }
+
+.formation-451 .player-1 {
+  left: 39%;
+  bottom: 0; }
+
+.formation-451 .player-2 {
+  bottom: 24%;
+  left: 5%; }
+
+.formation-451 .player-3 {
+  bottom: 20%;
+  left: 25%; }
+
+.formation-451 .player-4 {
+  bottom: 20%;
+  left: 45%; }
+
+.formation-451 .player-5 {
+  bottom: 24%;
+  left: 70%; }
+
+.formation-451 .player-6 {
+  bottom: 46%;
+  left: 0%; }
+
+.formation-451 .player-7 {
+  bottom: 38%;
+  left: 58%; }
+
+.formation-451 .player-8 {
+  bottom: 35%;
+  left: 38%; }
+
+.formation-451 .player-9 {
+  bottom: 46%;
+  left: 74%; }
+
+.formation-451 .player-10 {
+  bottom: 37%;
+  left: 16%; }
+
+.formation-451 .player-11 {
+  bottom: 58%;
+  left: 38%; }
+
+.formation-4141 .player-1 {
+  left: 39%;
+  bottom: 0; }
+
+.formation-4141 .player-2 {
+  bottom: 24%;
+  left: 5%; }
+
+.formation-4141 .player-3 {
+  bottom: 20%;
+  left: 25%; }
+
+.formation-4141 .player-4 {
+  bottom: 20%;
+  left: 45%; }
+
+.formation-4141 .player-5 {
+  bottom: 24%;
+  left: 70%; }
+
+.formation-4141 .player-6 {
+  bottom: 61%;
+  left: 35px; }
+
+.formation-4141 .player-7 {
+  bottom: 47%;
+  left: 56%; }
+
+.formation-4141 .player-8 {
+  bottom: 35%;
+  left: 38%; }
+
+.formation-4141 .player-9 {
+  bottom: 61%;
+  left: 68%; }
+
+.formation-4141 .player-10 {
+  bottom: 47%;
+  left: 19%; }
+
+.formation-4141 .player-11 {
+  bottom: 70%;
+  left: 38%; }
 
 .menu {
   position: relative;
