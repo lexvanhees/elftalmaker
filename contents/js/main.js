@@ -9,17 +9,23 @@ $(function () {
 });
 
 $(function() { 
-    $(".make").click(function() { 
+    $(".btn").click(function() { 
         html2canvas($("#field"), {
-        	
             onrendered: function(canvas) {
                 theCanvas = canvas;
                 document.body.appendChild(canvas);
 
                 // Convert and download as image 
                 Canvas2Image.saveAsPNG(canvas);
-                $("#img-out").append(canvas);
+                var image = Canvas2Image.convertToPNG(canvas);
+               var image_data = $(image).attr('src');
+              
 
+               	$('canvas').attr('name', 'value');
+
+               	alert(canvas.toDataURL());
+
+                $("#img-out").append(canvas);
                 // Clean up 
                 //document.body.removeChild(canvas);
             }
@@ -29,6 +35,26 @@ $(function() {
 
 
 $(document).ready(function () {
+
+
+        $("#buttonTextArea").click(function() {
+            var canvas  = document.getElementById("ex1");
+            var dataUrl = canvas.toDataURL();
+
+            document.getElementById("textArea").value = dataUrl;
+        });
+
+        $("#buttonWindow").click(function(){
+            var canvas  = document.getElementById("ex1");
+            var dataUrl = canvas.toDataURL();
+
+            window.open(dataUrl, "toDataURL() image", "width=600, height=200");
+        });
+
+
+
+
+
 
 	// Open dialog for editing player
 	$(".player").on('click touchstart', function() {
