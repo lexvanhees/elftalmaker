@@ -124,7 +124,8 @@ body {
     right: 0;
     text-align: center;
     font-size: 14px;
-    color: #fff; }
+    color: #fff;
+    cursor: pointer; }
     @media (max-width: 480px) {
       .player .name {
         font-size: 12px; } }

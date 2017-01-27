@@ -1,3 +1,4 @@
+
 $(function () {
 	$(".player").draggable({
 		containment: "parent",
@@ -9,25 +10,19 @@ $(function () {
 });
 
 $(function() { 
-    $(".btn").click(function() { 
+    $(".btn").click(function() {
         html2canvas($("#field"), {
             onrendered: function(canvas) {
                 theCanvas = canvas;
                 document.body.appendChild(canvas);
-
-                // Convert and download as image 
-                Canvas2Image.saveAsPNG(canvas);
-                var image = Canvas2Image.convertToPNG(canvas);
-               var image_data = $(image).attr('src');
-              
-
-               	$('canvas').attr('name', 'value');
-
-               	alert(canvas.toDataURL());
-
+                canvas.getContext("2d");
+            
                 $("#img-out").append(canvas);
-                // Clean up 
-                //document.body.removeChild(canvas);
+
+                 $('canvas').attr("id","canvas");
+                 $('canvas').attr("crossOrigin", "Anonymous")
+
+                 var test = canvas.toDataURL("image/png");
             }
         });
     });
@@ -36,34 +31,11 @@ $(function() {
 
 $(document).ready(function () {
 
-
-        $("#buttonTextArea").click(function() {
-            var canvas  = document.getElementById("ex1");
-            var dataUrl = canvas.toDataURL();
-
-            document.getElementById("textArea").value = dataUrl;
-        });
-
-        $("#buttonWindow").click(function(){
-            var canvas  = document.getElementById("ex1");
-            var dataUrl = canvas.toDataURL();
-
-            window.open(dataUrl, "toDataURL() image", "width=600, height=200");
-        });
-
-
-
-
-
-
 	// Open dialog for editing player
-	$(".player").on('click touchstart', function() {
+	$(".player .name").on('click touchstart', function() {
 
-		if ($(this).hasClass('noclick')) {
-			$(this).removeClass('noclick');
-		}
 
-		var id = $(this).data('player');
+		var id = $(this).closest('div').data('player');
 		var name = $('[data-player=' + id + ']').find('.name').text();
 		var number = $('[data-player=' + id + ']').find('.number').text();
 
@@ -135,6 +107,5 @@ $(document).ready(function () {
 		var color = $(this).val();
 		$('.player').css('background-color', '' + color + '');
 	});
-
 
 });
