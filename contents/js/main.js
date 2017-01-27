@@ -32,10 +32,10 @@ $(function() {
 $(document).ready(function () {
 
 	// Open dialog for editing player
-	$(".player .name").on('click touchstart', function() {
+	$(".player").on('click touchstart', function() {
 
 
-		var id = $(this).closest('div').data('player');
+		var id = $(this).data('player');
 		var name = $('[data-player=' + id + ']').find('.name').text();
 		var number = $('[data-player=' + id + ']').find('.number').text();
 
