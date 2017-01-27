@@ -17,4 +17,13 @@
         Lex van Hees
     </author>
 
+
+    <platform name="android">
+        <splash src="contents/img/splash/android-xhdpi.png" density="port-hdpi"/>
+        <splash src="contents/img/splash/android-xhdpi.png" density="port-ldpi"/>
+        <splash src="contents/img/splash/android-xhdpi.png" density="port-mdpi"/>
+        <splash src="contents/img/splash/android-xhdpi.png" density="port-xhdpi"/>
+    </platform>
+
+
 </widget>
