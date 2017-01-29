@@ -2,9 +2,9 @@
 $(function () {
 	$(".player").draggable({
 		containment: "parent",
-
-		start: function(event, ui) {
-			$(this).addClass('noclick');
+		start: function()
+		{
+			$(".player").addClass('noclick');
 		}
 	});
 });
@@ -34,18 +34,18 @@ $(document).ready(function () {
 	// Open dialog for editing player
 	$(".player").on('click touchstart', function() {
 
+			var id = $(this).data('player');
+			var name = $('[data-player=' + id + ']').find('.name').text();
+			var number = $('[data-player=' + id + ']').find('.number').text();
 
-		var id = $(this).data('player');
-		var name = $('[data-player=' + id + ']').find('.name').text();
-		var number = $('[data-player=' + id + ']').find('.number').text();
+			// Clear fields
+			$('#edit_player_name, #edit_player_number').val('');
+			$(".edit_player").fadeIn();
 
-		// Clear fields
-		$('#edit_player_name, #edit_player_number').val('');
-		$(".edit_player").fadeIn();
-
-		$('#edit_player_id').val(id);
-		$('#edit_player_name').val(name);
-		$('#edit_player_number').val(number);
+			$('#edit_player_id').val(id);
+			$('#edit_player_name').val(name);
+			$('#edit_player_number').val(number);
+		}
 	});
 
 	// Close dialog and save player
@@ -93,8 +93,6 @@ $(document).ready(function () {
 	$(".close_btn").click(function(){
 		$(".dialog").fadeOut();
 	});
-
-
 
 
 	$("#colorpicker").spectrum({
