@@ -39,6 +39,20 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        '<%= config.css_dest %>css//*.css',
+                        '*.html'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: 'C:/wamp64/www/elftalmaker/index.html'
+                }
+            }
+        },
 
         // Watch and build
         watch: {
@@ -55,8 +69,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     // Run tasks
     grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 
 };
