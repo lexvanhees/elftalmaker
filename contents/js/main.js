@@ -1,14 +1,6 @@
 $(function () {
     $(".player").draggable({
         containment: "parent",
-        start: function () {
-            $(".player").addClass('noclick');
-            console.log('1');
-        },
-        stop: function () {
-            $(".player").removeClass('noclick');
-            console.log('3');
-        }
     });
 });
 
@@ -53,12 +45,19 @@ $(function () {
 
 $(document).ready(function () {
 
+    $('.player').draggable({
+        start: function (event, ui) {
+            $(this).addClass('noclick');
+        },
+        stop: function () {
+            $(this).removeClass('noclick');
+        }
+    });
 
     // Open dialog for editing player
     $(".player").on('click touchstart', function () {
-        console.log('2');
-        if($(this).hasClass('noclick')) {
 
+        if($(this).hasClass('noclick')) {
         } else {
 
             var id = $(this).data('player');
