@@ -3,6 +3,11 @@ $(function () {
         containment: "parent",
         start: function () {
             $(".player").addClass('noclick');
+            console.log('1');
+        },
+        stop: function () {
+            $(".player").removeClass('noclick');
+            console.log('3');
         }
     });
 });
@@ -15,8 +20,13 @@ $(function () {
                 document.body.appendChild(canvas);
                 canvas.getContext("2d");
 
+                $('canvas').attr("id", "canvas");
+                $('canvas').attr("crossOrigin", "Anonymous");
+
 
                 var test = canvas.toDataURL("image/png");
+
+                alert(test);
 
                 $('#imgh').attr("src", test);
                 $('#imgh').attr("title", "Opstellinge");
@@ -28,6 +38,13 @@ $(function () {
 
                 $('canvas').attr("id", "canvas");
                 $('canvas').attr("crossOrigin", "Anonymous");
+
+                    var a      = document.createElement('a');
+                    a.href     = 'data:image/svg+xml;utf8,' + unescape($('#imgh')[0].outerHTML);
+                    a.download = 'plot.svg';
+                    a.target   = '_blank';
+                    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+
             }
         });
     });
@@ -36,20 +53,26 @@ $(function () {
 
 $(document).ready(function () {
 
+
     // Open dialog for editing player
     $(".player").on('click touchstart', function () {
+        console.log('2');
+        if($(this).hasClass('noclick')) {
 
-        var id = $(this).data('player');
-        var name = $('[data-player=' + id + ']').find('.name').text();
-        var number = $('[data-player=' + id + ']').find('.number').text();
+        } else {
 
-        // Clear fields
-        $('#edit_player_name, #edit_player_number').val('');
-        $(".edit_player").fadeIn();
+            var id = $(this).data('player');
+            var name = $('[data-player=' + id + ']').find('.name').text();
+            var number = $('[data-player=' + id + ']').find('.number').text();
 
-        $('#edit_player_id').val(id);
-        $('#edit_player_name').val(name);
-        $('#edit_player_number').val(number);
+            // Clear fields
+            $('#edit_player_name, #edit_player_number').val('');
+            $(".edit_player").fadeIn();
+
+            $('#edit_player_id').val(id);
+            $('#edit_player_name').val(name);
+            $('#edit_player_number').val(number);
+        }
     });
 
     $('body').on('click', '#canvas', function() {
