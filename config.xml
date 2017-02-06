@@ -3,11 +3,9 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.elftal.maker"
         versionCode = "10"
-        version     = "1.0.0" >
+        version     = "1.0.0">
 
-    <!-- versionCode is optional and Android only -->
-
-    <name>Efltal maker</name>
+    <name>Elftal maker</name>
 
     <description>
         An example for phonegap build docs.
@@ -24,6 +22,5 @@
         <splash src="contents/img/splash/android-xhdpi.png" density="port-mdpi"/>
         <splash src="contents/img/splash/android-xhdpi.png" density="port-xhdpi"/>
     </platform>
-
 
 </widget>
