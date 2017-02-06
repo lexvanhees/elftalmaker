@@ -46,7 +46,7 @@ $(function () {
 $(document).ready(function () {
 
     $('.player').draggable({
-        start: function (event, ui) {
+        start: function () {
             $(this).addClass('noclick');
         },
         stop: function () {
@@ -55,28 +55,29 @@ $(document).ready(function () {
     });
 
     // Open dialog for editing player
-    $(".player").on('click touchstart', function () {
+    $(".player").on('click', function () {
 
-        if($(this).hasClass('noclick')) {
+        if ($(this).is('.ui-draggable-dragging')) {
+
         } else {
+            
+            if ($(this).hasClass('noclick')) {
 
-            var id = $(this).data('player');
-            var name = $('[data-player=' + id + ']').find('.name').text();
-            var number = $('[data-player=' + id + ']').find('.number').text();
+            } else {
 
-            // Clear fields
-            $('#edit_player_name, #edit_player_number').val('');
-            $(".edit_player").fadeIn();
+                var id = $(this).data('player');
+                var name = $('[data-player=' + id + ']').find('.name').text();
+                var number = $('[data-player=' + id + ']').find('.number').text();
 
-            $('#edit_player_id').val(id);
-            $('#edit_player_name').val(name);
-            $('#edit_player_number').val(number);
+                // Clear fields
+                $('#edit_player_name, #edit_player_number').val('');
+                $(".edit_player").fadeIn();
+
+                $('#edit_player_id').val(id);
+                $('#edit_player_name').val(name);
+                $('#edit_player_number').val(number);
+            }
         }
-    });
-
-    $('body').on('click', '#canvas', function() {
-
-        alert(test);
     });
 
     // Close dialog and save player
