@@ -16,6 +16,9 @@
     </author>
 
 
+    <gap:splash src="contents/img/splash/android-xhdpi.png" />
+
+
     <platform name="android">
         <splash src="contents/img/splash/android-xhdpi.png" density="port-hdpi"/>
         <splash src="contents/img/splash/android-xhdpi.png" density="port-ldpi"/>
