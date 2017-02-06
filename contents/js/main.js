@@ -4,46 +4,30 @@ $(function () {
     });
 });
 
-$(function () {
-    $(".btn").click(function () {
+
+$(document).ready(function () {
+
+    $(".btn").on('click', function () {
         html2canvas($("#field"), {
             onrendered: function (canvas) {
-                theCanvas = canvas;
-                document.body.appendChild(canvas);
                 canvas.getContext("2d");
 
-                $('canvas').attr("id", "canvas");
-                $('canvas').attr("crossOrigin", "Anonymous");
-
-
-                var test = canvas.toDataURL("image/png");
-
-                alert(test);
-
-                $('#imgh').attr("src", test);
-                $('#imgh').attr("title", "Opstellinge");
-
-              //  $(".share").append(canvas);
                 $(".share").show();
 
+                $(canvas).attr("id", "canvas");
+                $(canvas).attr("crossOrigin", "Anonymous");
 
+                var img_url = canvas.toDataURL("image/png");
 
-                $('canvas').attr("id", "canvas");
-                $('canvas').attr("crossOrigin", "Anonymous");
+                alert(img_url);
 
-                    var a      = document.createElement('a');
-                    a.href     = 'data:image/svg+xml;utf8,' + unescape($('#imgh')[0].outerHTML);
-                    a.download = 'plot.svg';
-                    a.target   = '_blank';
-                    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+                $('#imgh').attr("src", img_url);
+                $('#imgh').attr("title", "Opstellinge");
+
 
             }
         });
     });
-});
-
-
-$(document).ready(function () {
 
     $('.player').draggable({
         start: function () {
@@ -60,7 +44,7 @@ $(document).ready(function () {
         if ($(this).is('.ui-draggable-dragging')) {
 
         } else {
-            
+
             if ($(this).hasClass('noclick')) {
 
             } else {
