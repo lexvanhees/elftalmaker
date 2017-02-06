@@ -23,4 +23,6 @@
         <splash src="contents/img/splash/android-xhdpi.png" density="port-xhdpi"/>
     </platform>
 
+    <preference name="SplashScreenDelay" value="3000" />
+
 </widget>
