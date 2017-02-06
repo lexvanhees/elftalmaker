@@ -25,35 +25,17 @@ $(document).ready(function () {
                 $('#imgh').attr("title", "Opstellinge");
 
 
+                var a = $("<a>").attr("href", img_url).attr("download", img_url).appendTo("body");
+                a[0].click();
+                a.remove();
+
             }
         });
     });
 
 
-    $(".player").on({
-        drag: function(e) {
-
-
-            e.stopImmediatePropagation();
-        },
-        click: function(event) {
-            var id = $(this).data('player');
-            var name = $('[data-player=' + id + ']').find('.name').text();
-            var number = $('[data-player=' + id + ']').find('.number').text();
-
-            // Clear fields
-            $('#edit_player_name, #edit_player_number').val('');
-            $(".edit_player").fadeIn();
-
-            $('#edit_player_id').val(id);
-            $('#edit_player_name').val(name);
-            $('#edit_player_number').val(number);
-            event.stopImmediatePropagation();
-        }
-    });
-
     // Open dialog for editing player
-  /*  $(".player").on('click', function () {
+  $(".player").on('click', function () {
 
 
         if ($('.bar').is('.ui-draggable-dragging')) {
@@ -74,7 +56,7 @@ $(document).ready(function () {
             $('#edit_player_number').val(number);
         }
     });
-*/
+
     // Close dialog and save player
     $('#edit_player').submit(function (e) {
 
